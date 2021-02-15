@@ -30,16 +30,18 @@ export default class CreateUser extends Component {
       .post("http://localhost:5000/users/add", user)
       .then((res) => console.log(res.data));
 
-
     this.setState({
       username: "",
+
     });
+
+    alert(`User ${this.state.username} has been created`)
   }
 
   render() {
     return (
       <div>
-        <h3>Create New User</h3>
+        <h3 className="create-user-head">Create New User</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Username: </label>
